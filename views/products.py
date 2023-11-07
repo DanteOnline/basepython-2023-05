@@ -70,6 +70,11 @@ def create_product():
 
 @products_app.get("/<int:product_id>/", endpoint="detail")
 def get_product_by_id(product_id: int):
+    """
+    Get product ...
+    :param product_id:
+    :return:
+    """
     product = storage.get_product_by_id(product_id)
     if product is None:
         raise NotFound(f"Product #{product_id} not found!")
